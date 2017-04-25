@@ -26,13 +26,13 @@ public class SecondActivity extends AppCompatActivity {
         tv.setText(type);
         holiday = new ArrayList<Holiday>();
         if(type.equalsIgnoreCase("secular")){
-            holiday.add(new Holiday("New Year's Day","1 Jan 2017","newyear"));
-            holiday.add(new Holiday("Labour Day","1 May 2017","labourday"));
+            holiday.add(new Holiday("New Year's Day","1 Jan 2017",type,true));
+            holiday.add(new Holiday("Labour Day","1 May 2017",type,false));
         } else {
-            holiday.add(new Holiday("Chinese New Year","28-29 Jan 2017","cny"));
-            holiday.add(new Holiday("Good Friday","14 April 2017","goodfriday"));
+            holiday.add(new Holiday("Chinese New Year","28-29 Jan 2017",type,true));
+            holiday.add(new Holiday("Good Friday","14 April 2017",type,false));
         }
-        aa = new
+        aa = new HolidayAdapter(this, R.layout.row, holiday);
         lv.setAdapter(aa);
     }
 }

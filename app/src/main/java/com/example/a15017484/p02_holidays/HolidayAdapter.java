@@ -10,6 +10,8 @@ import android.widget.TextView;
 
 import java.util.ArrayList;
 
+import static com.example.a15017484.p02_holidays.R.id.tv;
+
 /**
  * Created by 15017484 on 25/4/2017.
  */
@@ -39,23 +41,34 @@ public class HolidayAdapter extends ArrayAdapter{
 
         // Get the TextView object
         tvHoliday = (TextView) rowView.findViewById(R.id.textViewH);
+        tvDate = (TextView)rowView.findViewById(R.id.textViewD);
         // Get the ImageView object
-        ivProg = (ImageView) rowView.findViewById(R.id.imageView);
+        iv = (ImageView) rowView.findViewById(R.id.imageView);
 
 
         // The parameter "position" is the index of the
         //  row ListView is requesting.
         //  We get back the food at the same index.
-        Module currentModule = holiday.get(position);
-        // Set the TextView to show the food
+        Holiday currentHoliday= holiday.get(position);
 
-        tvModule.setText(currentModule.getModule());
+        tvHoliday.setText(currentHoliday.getHoliday());
+        tvDate.setText(currentHoliday.getDate());
+
         // Set the image to prog or nonprog accordingly
-        if(currentModule.isProg()) {
-            ivProg.setImageResource(R.drawable.prog);
+        if(currentHoliday.getType().equalsIgnoreCase("secular")) {
+            if(currentHoliday.getImg()){
+                iv.setImageResource(R.drawable.newyear);
+            } else {
+                iv.setImageResource(R.drawable.labourday);
+            }
         }
         else {
-            ivProg.setImageResource(R.drawable.nonprog);
+            if (currentHoliday.getImg()){
+                iv.setImageResource(R.drawable.cny);
+            } else {
+                iv.setImageResource(R.drawable.goodfriday);
+            }
+
         }
         // Return the nicely done up View to the ListView
         return rowView;

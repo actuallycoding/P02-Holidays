@@ -6,13 +6,19 @@ package com.example.a15017484.p02_holidays;
 
 public class Holiday {
     private String holiday;
+    private String date;
     private String type;
-    private String img;
+    private Boolean img;
 
-    public Holiday(String holiday, String type, String img) {
+    public Holiday(String holiday, String date,String type, Boolean img) {
+        this.date = date;
         this.holiday = holiday;
         this.type = type;
         this.img = img;
+    }
+
+    public String getDate() {
+        return date;
     }
 
     public String getHoliday() {
@@ -23,7 +29,7 @@ public class Holiday {
         return type;
     }
 
-    public String getImg() {
+    public Boolean getImg() {
         return img;
     }
 }
