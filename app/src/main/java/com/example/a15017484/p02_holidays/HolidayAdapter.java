@@ -53,22 +53,22 @@ public class HolidayAdapter extends ArrayAdapter {
 
         tvHoliday.setText(currentHoliday.getHoliday());
         tvDate.setText(currentHoliday.getDate());
-
+        iv.setImageResource(currentHoliday.getImg());
         // Set the image to prog or nonprog accordingly
-        if (currentHoliday.getType().equalsIgnoreCase("secular")) {
-            if (currentHoliday.getImg()) {
-                iv.setImageResource(R.drawable.newyear);
-            } else {
-                iv.setImageResource(R.drawable.labourday);
-            }
-        } else {
-            if (currentHoliday.getImg()) {
-                iv.setImageResource(R.drawable.cny);
-            } else {
-                iv.setImageResource(R.drawable.goodfriday);
-            }
-
-        }
+//        if (currentHoliday.getType().equalsIgnoreCase("secular")) {
+//            if (currentHoliday.getImg()) {
+//                iv.setImageResource(R.drawable.newyear);
+//            } else {
+//                iv.setImageResource(R.drawable.labourday);
+//            }
+//        } else {
+//            if (currentHoliday.getImg()) {
+//                iv.setImageResource(R.drawable.cny);
+//            } else {
+//                iv.setImageResource(R.drawable.goodfriday);
+//            }
+//
+//        }
         // Return the nicely done up View to the ListView
         return rowView;
     }

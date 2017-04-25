@@ -9,9 +9,9 @@ public class Holiday {
     private String date;
     private String type;
     private String desc;
-    private Boolean img;
+    private int img;
 
-    public Holiday(String holiday, String date, String type, String desc, Boolean img) {
+    public Holiday(String holiday, String date, String type, String desc, int img) {
         this.desc = desc;
         this.date = date;
         this.holiday = holiday;
@@ -35,7 +35,7 @@ public class Holiday {
         return type;
     }
 
-    public Boolean getImg() {
+    public int getImg() {
         return img;
     }
 }
