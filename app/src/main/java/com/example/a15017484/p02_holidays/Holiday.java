@@ -8,9 +8,11 @@ public class Holiday {
     private String holiday;
     private String date;
     private String type;
+    private String desc;
     private Boolean img;
 
-    public Holiday(String holiday, String date,String type, Boolean img) {
+    public Holiday(String holiday, String date, String type, String desc, Boolean img) {
+        this.desc = desc;
         this.date = date;
         this.holiday = holiday;
         this.type = type;
@@ -23,6 +25,10 @@ public class Holiday {
 
     public String getHoliday() {
         return holiday;
+    }
+
+    public String getDesc() {
+        return desc;
     }
 
     public String getType() {

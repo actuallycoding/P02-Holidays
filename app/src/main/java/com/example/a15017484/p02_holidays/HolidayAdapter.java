@@ -16,7 +16,7 @@ import static com.example.a15017484.p02_holidays.R.id.tv;
  * Created by 15017484 on 25/4/2017.
  */
 
-public class HolidayAdapter extends ArrayAdapter{
+public class HolidayAdapter extends ArrayAdapter {
 
     private Context context;
     private ArrayList<Holiday> holiday;
@@ -24,7 +24,7 @@ public class HolidayAdapter extends ArrayAdapter{
     private TextView tvDate;
     private ImageView iv;
 
-    public HolidayAdapter(Context context, int resource, ArrayList<Holiday> objects){
+    public HolidayAdapter(Context context, int resource, ArrayList<Holiday> objects) {
         super(context, resource, objects);
         holiday = objects;
         this.context = context;
@@ -41,7 +41,7 @@ public class HolidayAdapter extends ArrayAdapter{
 
         // Get the TextView object
         tvHoliday = (TextView) rowView.findViewById(R.id.textViewH);
-        tvDate = (TextView)rowView.findViewById(R.id.textViewD);
+        tvDate = (TextView) rowView.findViewById(R.id.textViewD);
         // Get the ImageView object
         iv = (ImageView) rowView.findViewById(R.id.imageView);
 
@@ -49,21 +49,20 @@ public class HolidayAdapter extends ArrayAdapter{
         // The parameter "position" is the index of the
         //  row ListView is requesting.
         //  We get back the food at the same index.
-        Holiday currentHoliday= holiday.get(position);
+        Holiday currentHoliday = holiday.get(position);
 
         tvHoliday.setText(currentHoliday.getHoliday());
         tvDate.setText(currentHoliday.getDate());
 
         // Set the image to prog or nonprog accordingly
-        if(currentHoliday.getType().equalsIgnoreCase("secular")) {
-            if(currentHoliday.getImg()){
+        if (currentHoliday.getType().equalsIgnoreCase("secular")) {
+            if (currentHoliday.getImg()) {
                 iv.setImageResource(R.drawable.newyear);
             } else {
                 iv.setImageResource(R.drawable.labourday);
             }
-        }
-        else {
-            if (currentHoliday.getImg()){
+        } else {
+            if (currentHoliday.getImg()) {
                 iv.setImageResource(R.drawable.cny);
             } else {
                 iv.setImageResource(R.drawable.goodfriday);

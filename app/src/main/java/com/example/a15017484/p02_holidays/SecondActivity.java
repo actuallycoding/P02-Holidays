@@ -29,11 +29,11 @@ public class SecondActivity extends AppCompatActivity {
         tv.setText(type);
         holiday = new ArrayList<Holiday>();
         if(type.equalsIgnoreCase("secular")){
-            holiday.add(new Holiday("New Year's Day","1 Jan 2017",type,true));
-            holiday.add(new Holiday("Labour Day","1 May 2017",type,false));
+            holiday.add(new Holiday("New Year's Day","1 Jan 2017",type,"New Year is the time at which a new calendar year begins and the calendar's year count increments by one.",true));
+            holiday.add(new Holiday("Labour Day","1 May 2017",type,"Labour Day is an annual holiday to celebrate the achievements of workers.",false));
         } else {
-            holiday.add(new Holiday("Chinese New Year","28-29 Jan 2017",type,true));
-            holiday.add(new Holiday("Good Friday","14 April 2017",type,false));
+            holiday.add(new Holiday("Chinese New Year","28-29 Jan 2017",type,"Chinese New Year, also known as the \"Spring Festival\" in modern Mainland China, is an important Chinese festival celebrated at the turn of the traditional lunisolar Chinese calendar.",true));
+            holiday.add(new Holiday("Good Friday","14 April 2017",type,"Good Friday is a Christian holiday commemorating the crucifixion of Jesus Christ and his death at Calvary.",false));
         }
         aa = new HolidayAdapter(this, R.layout.row, holiday);
         lv.setAdapter(aa);
@@ -43,7 +43,7 @@ public class SecondActivity extends AppCompatActivity {
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
                 Holiday selectedHoliday = holiday.get(position);
 
-                Toast.makeText(SecondActivity.this, selectedHoliday.getHoliday() + " Date: "+selectedHoliday.getDate(),
+                Toast.makeText(SecondActivity.this, selectedHoliday.getDesc(),
                         Toast.LENGTH_LONG).show();
             }
         });
